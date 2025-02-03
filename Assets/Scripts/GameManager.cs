@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,10 +11,20 @@ public class GameManager : MonoBehaviour
     public float timeLimit;
     public TMP_Text timerText;
 
+    public Canvas inGame;
+    public Canvas pauseMenu;
+
+    public bool isPaused;
+
+
     // Start is called before the first frame update
     void Start()
     {
         timer = timeLimit;
+
+        isPaused = false;
+        inGame.enabled = true;
+        pauseMenu.enabled = false;
     }
 
     // Update is called once per frame
@@ -35,5 +46,33 @@ public class GameManager : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPaused = !isPaused;
+        }
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+            inGame.enabled = false;
+            pauseMenu.enabled = true;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            inGame.enabled = true;
+            pauseMenu.enabled = false;
+        }
+    }
+
+    public void OnPlay()
+    {
+        isPaused = false;
+    }
+
+    public void OnExit()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
