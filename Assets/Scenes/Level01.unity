@@ -7720,6 +7720,21 @@ PrefabInstance:
       propertyPath: timeLimit
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 8254524179613724855, guid: b0e9e4c5ae92e874db66c4152062057b,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254524179613724855, guid: b0e9e4c5ae92e874db66c4152062057b,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.85069823
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254524179613724855, guid: b0e9e4c5ae92e874db66c4152062057b,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
